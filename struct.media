@@ -2,71 +2,57 @@
 #include <stdlib.h>
 #include <locale.h>
 
-    struct dados_info
-    {
-        char nome[200];
-        char idade[200];
-        int notas[2];
-        
-       
-        
-       
-    };
+struct dados_info
+{
+    char nome[200];
+    char idade[200];
+};
 int main()
 {
 
     int i;
     int somanota[3];
-       float media[2];
+    int media[3];
 
+    int notas1[2];
+    int notas2[2];
 
     struct dados_info info[3];
 
-for ( i = 0; i < 3; i++)
-{
-   
+    for (i = 0; i < 3; i++)
+    {
 
-        printf ("\nDigite o nome:");
-       gets (info[i].nome);
+        printf("\nDigite o nome:");
+        gets(info[i].nome);
 
-       fflush (stdin);
+        fflush(stdin);
 
-       printf ("\nDigite sua idade:");
-       gets (info[i].idade);
+        printf("\nDigite sua idade:");
+        gets(info[i].idade);
 
-       fflush (stdin);
-       
+        fflush(stdin);
 
-       printf ("\nDigite sua nota:");
-       scanf ("%d", &info[i].notas);
-       fflush (stdin);
+        printf("\nDigite sua nota:");
+        scanf("%d", &notas1[i]);
+        fflush(stdin);
 
-       printf ("\nDigite sua nota:");
-       scanf ("%d", &info[i].notas);
-       fflush (stdin);
+        printf("\nDigite sua nota:");
+        scanf("%d", &notas2[i]);
+        fflush(stdin);
 
-       somanota[i] = somanota[i] + info[i].notas;
+        somanota[i] = somanota[i] + notas1[i] + notas2[i];
 
-      
-       
-       media[i] = somanota[i] / 3;
+        media[i] = somanota[i] / 2;
+    }
 
-       
+    for (i = 0; i < 3; i++)
+    {
+        printf("\nNome:%s", info[i].nome);
+        printf("\nidade:%s", info[i].idade);
+        printf("\nnotas:%d", notas1[i]);
+        printf("\nnotas:%d", notas2[i]);
+        printf("\nmedia:%d", media[i]);
+    }
 
-       
-}
-
-for ( i = 0; i < 3; i++)
-{
-printf ("\nNome:%s", info[i].nome);
-printf ("\nidade:%s", info[i].idade);
-printf ("\nnotas:%d", info[i].notas);
-printf ("\nmedia:%f", media[i]);
-
-
-
-}
-
-return 0;
-       
+    return 0;
 }
